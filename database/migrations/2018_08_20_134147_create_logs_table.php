@@ -15,7 +15,7 @@ class CreateLogsTable extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
 		$table->increments('id');
-		$table->date('date');
+		$table->string('date');
 		$table->string('uname');
 		$table->string('compname');
 		$table->string('ipaddress');
