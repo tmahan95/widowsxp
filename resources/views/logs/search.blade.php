@@ -3,14 +3,12 @@
 @section('content')
 
 
-	<form action="/search" method="POST" role="search">
+	<form action="LogsController@searchLogs" method="POST" role="search">
 		<div class="container">
 			{{ csrf_field() }}
 			<div class="input-group">
 				<input type="text" class="form-control" name="q" placeholder="Search users"> <span class="input-group-btn">
-				<button type="submit" class="btn btn-default">
-					<span class="glyphicon glyphicon-search"></span>
-				</button>
+				<button type="submit" class="btn btn-primary">Search</button>
 			</div>
 
 		</div>
@@ -18,7 +16,7 @@
 	<div class="container">
 		@if(isset($details))
 			<p> The Search results for your query <b> {{ $query }} </b> are: </p>
-			<h2> Sample User Details</h2>
+			<h2> Logs</h2>
 			<table class="table table-striped">
 				<thead>
 					<tr>

@@ -15,7 +15,6 @@
                     @endif
 			<ul>
 				<li><a href="/admin/users">Users</a></li>
-				<li><a href="/admin/authors">Authors</a></li>
 				<li><a href="/logs">Logs</a></li>
 			</ul>
                 </div>
