@@ -18,7 +18,7 @@
 	<div class="container">
 		@if(isset($details))
 			<p> The Search results for your query <b> {{ $query }} </b> are: </p>
-			<h2> Sample User Details</h2>
+			<h2> Logs</h2>
 			<table class="table table-striped">
 				<thead>
 					<tr>
