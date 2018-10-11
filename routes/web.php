@@ -35,4 +35,8 @@ Route::group(['middleware' => 'guest', 'prefix' => 'api'], function() {
 	Route::resource('api', 'ApiController');
 });
 
-Route::post('/logs', 'LogsController@searchLogs');
+#This is all for searching through Logs.
+
+Route::ANY('/logs', 'LogsController@searchLogs');
+
+Route::ANY('/logs/user','LogsController@searchLogUsers');
