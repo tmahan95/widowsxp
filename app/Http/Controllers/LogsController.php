@@ -142,7 +142,7 @@ class LogsController extends Controller
 	$q = $request->q;
 	$log = Logs::select('uname','compname','ipaddress','os_version','os_build','bios_version','bios_date','model','serial')->where('uname', 'LIKE', '%'.$q.'%')->distinct()->take(5)->get();
 	if(count($log) > 0)
-		return view('logs.index')->withDetails ($log)->withQuery( $q );
+		return redirect()->route('logs.index')->withDetails ($log)->withQuery( $q );
 	else
 		return view('logs.index')->withMessage('No Details Found. Try another serach or contact the site administrator');
     }

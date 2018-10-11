@@ -10,7 +10,7 @@
 	{{ $message }}
 @endif
 
-	<form action="{{ route('logs.index') }}" method="POST" role="search">
+	<form action="{{ route('logs.searchLogs') }}" method="POST" role="search">
 		<div class="container">
 			{{ csrf_field() }}
 			<div class="input-group">
@@ -43,7 +43,7 @@
 					@foreach($details as $logs)
 						<tr>
 							<td> {{ $logs->date }}</td>
-							<td> <a href="{{ route('logs.index', ['q'=>$logs->uname]) }}">{{ $logs->uname }}</a></td>
+							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->uname]) }}">{{ $logs->uname }}</a></td>
 							<td> <a href="{{ route('logs.index', ['q'=>$logs->compname]) }}">{{ $logs->compname }}</a></td>
 							<td> <a href="{{ route('logs.index', ['q'=>$logs->ipaddress]) }}">{{ $logs->ipaddress }}</a></td>
 							<td> <a href="{{ route('logs.index',['q'=>$logs->os_version]) }}">{{ $logs->os_version }}</a></td>
