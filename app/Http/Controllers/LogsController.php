@@ -130,7 +130,7 @@ class LogsController extends Controller
 
     public function searchLogs(Request $request) {
 	$q = $request->q;
-	$log = Logs::where('date', 'LIKE', '%'.$q.'%')->orWhere('uname','LIKE','%'.$q.'%')->orWhere('compname', 'LIKE','%'.$q.'%')->orWhere('ipaddress', 'LIKE','%'.$q.'%')->orWhere('os_version', 'LIKE','%'.$q.'%')->orWhere('os_build', 'LIKE','%'.$q.'%')->orWhere('bios_version', 'LIKE','%'.$q.'%')->orWhere('bios_date', 'LIKE','%'.$q.'%')->orWhere('model', 'LIKE','%'.$q.'%')->orWhere('serial', 'LIKE','%'.$q.'%')->get();
+	$log = Logs::where('date', 'LIKE', '%'.$q.'%')->orWhere('uname','LIKE','%'.$q.'%')->orWhere('compname', 'LIKE','%'.$q.'%')->orWhere('ipaddress', 'LIKE','%'.$q.'%')->orWhere('os_version', 'LIKE','%'.$q.'%')->orWhere('os_build', 'LIKE','%'.$q.'%')->orWhere('bios_version', 'LIKE','%'.$q.'%')->orWhere('bios_date', 'LIKE','%'.$q.'%')->orWhere('model', 'LIKE','%'.$q.'%')->orWhere('serial', 'LIKE','%'.$q.'%')->distinct()->get();
 #	$log = Logs::where('uname', 'LIKE', '%'.$q.'%')->get();
 	if(count($log) > 0)
 		return view('logs.index')->withDetails ($log)->withQuery( $q );
@@ -140,7 +140,7 @@ class LogsController extends Controller
 
     public function searchLogUsers(Request $request){
 	$q = $request->q;
-	$log = Logs::where('uname', 'LIKE', '%'.$q.'%')->get();
+	$log = Logs::where('uname', 'LIKE', '%'.$q.'%')->distinct()->get();
 	if(count($log) > 0)
 		return view('logs.index')->withDetails ($log)->withQuery( $q );
 	else
