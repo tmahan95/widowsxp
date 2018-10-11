@@ -140,7 +140,7 @@ class LogsController extends Controller
 
     public function searchLogUsers(Request $request){
 	$q = $request->q;
-	$log = Logs::where('uname', 'LIKE', '%'.$q.'%')->distinct()->get();
+	$log = Logs::where('uname', 'LIKE', '%'.$q.'%')->groupBy('uname','compname')->get();
 	if(count($log) > 0)
 		return view('logs.index')->withDetails ($log)->withQuery( $q );
 	else
