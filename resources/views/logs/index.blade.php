@@ -1,13 +1,5 @@
 @extends('layouts.app')
 
-@section('scripts')
-<script>
-$document.ready(function(){
-	
-	
-}
-</script>
-@endsection
 @section('content')
 
 @if (session('message'))
@@ -54,12 +46,12 @@ $document.ready(function(){
 							<td> <a href="{{ route('logs.index', ['q'=>$logs->uname]) }}">{{ $logs->uname }}</a></td>
 							<td> <a href="{{ route('logs.index', ['q'=>$logs->compname]) }}">{{ $logs->compname }}</a></td>
 							<td> <a href="{{ route('logs.index', ['q'=>$logs->ipaddress]) }}">{{ $logs->ipaddress }}</a></td>
-							<td> {{ $logs->os_version }}</td>
-							<td> {{ $logs->os_build }}</td>
-							<td> {{ $logs->bios_version }}</td>
-							<td> {{ $logs->bios_date }}</td>
-							<td> {{ $logs->model }}</td>
-							<td> {{ $logs->serial }}</td>
+							<td> <a href="{{ route('logs.index',['q'=>$logs->os_version]) }}">{{ $logs->os_version }}</a></td>
+							<td> <a href="{{ route('logs.index',['q'=>$logs->os_build]) }}"> {{ $logs->os_build }}</a></td>
+							<td> <a href="{{ route('logs.index',['q'=>$logs->bios_version]) }}"> {{ $logs->bios_version }}</a></td>
+							<td> <a href="{{ route('logs.index',['q'=>$logs->bios_date]) }}"> {{ $logs->bios_date }}</a></td>
+							<td> <a href="{{ route('logs.index',['q'=>$logs->model]) }}"> {{ $logs->model }}</a></td>
+							<td> <a href="{{ route('logs.index',['q'=>$logs->serial]) }}"> {{ $logs->serial }}</a></td>
 						</tr>
 					@endforeach
 				</tbody>
