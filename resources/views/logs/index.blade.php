@@ -1,11 +1,24 @@
 @extends('layouts.app')
 
+@section('scripts')
+<script>
+$document.ready(function(){
+	
+	
+}
+</script>
+@endsection
 @section('content')
+
 @if (session('message'))
 	<div class="alert alert-info">{{ session('message') }}</div>
-	@endif
+@endif
 
-	<form action="{{ action('LogsController@searchLogs') }}" method="POST" role="search">
+@if(isset($message))
+	{{ $message }}
+@endif
+
+	<form action="{{ route('logs.index') }}" method="POST" role="search">
 		<div class="container">
 			{{ csrf_field() }}
 			<div class="input-group">
@@ -38,9 +51,9 @@
 					@foreach($details as $logs)
 						<tr>
 							<td> {{ $logs->date }}</td>
-							<td> {{ $logs->uname }}</td>
-							<td> {{ $logs->compname }}</td>
-							<td> {{ $logs->ipaddress }}</td>
+							<td> <a href="{{ route('logs.index', ['q'=>$logs->uname]) }}">{{ $logs->uname }}</a></td>
+							<td> <a href="{{ route('logs.index', ['q'=>$logs->compname]) }}">{{ $logs->compname }}</a></td>
+							<td> <a href="{{ route('logs.index', ['q'=>$logs->ipaddress]) }}">{{ $logs->ipaddress }}</a></td>
 							<td> {{ $logs->os_version }}</td>
 							<td> {{ $logs->os_build }}</td>
 							<td> {{ $logs->bios_version }}</td>
