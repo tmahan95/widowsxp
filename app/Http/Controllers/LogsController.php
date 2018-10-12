@@ -140,9 +140,9 @@ class LogsController extends Controller
 
     public function searchLogUsers(Request $request){
 	$q = $request->q;
-	$log = Logs::select('uname','compname','ipaddress','os_version','os_build','bios_version','bios_date','model','serial')->where('uname', 'LIKE', '%'.$q.'%')->distinct()->take(5)->get();
+	$log = Logs::select('date','uname','compname','ipaddress','os_version','os_build','bios_version','bios_date','model','serial')->where('date', 'LIKE', '%'.$q.'%')->orWhere('uname','LIKE','%'.$q.'%')->orWhere('compname', 'LIKE','%'.$q.'%')->orWhere('ipaddress', 'LIKE','%'.$q.'%')->orWhere('os_version', 'LIKE','%'.$q.'%')->orWhere('os_build', 'LIKE','%'.$q.'%')->orWhere('bios_version', 'LIKE','%'.$q.'%')->orWhere('bios_date', 'LIKE','%'.$q.'%')->orWhere('model', 'LIKE','%'.$q.'%')->orWhere('serial', 'LIKE','%'.$q.'%')->distinct()->take(5)->get();
 	if(count($log) > 0)
-		return redirect()->route('logs.index')->withDetails ($log)->withQuery( $q );
+		return view('logs.index')->withDetails ($log)->withQuery( $q );
 	else
 		return view('logs.index')->withMessage('No Details Found. Try another serach or contact the site administrator');
     }
