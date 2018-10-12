@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::ANY('/logs/search', 'LogsController@searchLogs')->name("logSearch");
+
+Route::ANY('/logs/refined','LogsController@searchLogUsers')->name("refinedLogSearch");
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -37,6 +41,3 @@ Route::group(['middleware' => 'guest', 'prefix' => 'api'], function() {
 
 #This is all for searching through Logs.
 
-#Route::ANY('/logs', 'LogsController@searchLogs');
-
-#Route::ANY('/logs/refined','LogsController@earchLogUsers')->name("refinedLogSearch");
