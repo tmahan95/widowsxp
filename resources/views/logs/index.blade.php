@@ -10,7 +10,7 @@
 	{{ $message }}
 @endif
 
-	<form action="{{ route('logs.searchLogs') }}" method="POST" role="search">
+	<form action="{{ route('logSearch') }}" method="POST" role="search">
 		<div class="container">
 			{{ csrf_field() }}
 			<div class="input-group">
@@ -44,14 +44,14 @@
 						<tr>
 							<td> {{ $logs->date }}</td>
 							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->uname]) }}">{{ $logs->uname }}</a></td>
-							<td> <a href="{{ route('logs.index', ['q'=>$logs->compname]) }}">{{ $logs->compname }}</a></td>
-							<td> <a href="{{ route('logs.index', ['q'=>$logs->ipaddress]) }}">{{ $logs->ipaddress }}</a></td>
-							<td> <a href="{{ route('logs.index',['q'=>$logs->os_version]) }}">{{ $logs->os_version }}</a></td>
-							<td> <a href="{{ route('logs.index',['q'=>$logs->os_build]) }}"> {{ $logs->os_build }}</a></td>
-							<td> <a href="{{ route('logs.index',['q'=>$logs->bios_version]) }}"> {{ $logs->bios_version }}</a></td>
-							<td> <a href="{{ route('logs.index',['q'=>$logs->bios_date]) }}"> {{ $logs->bios_date }}</a></td>
-							<td> <a href="{{ route('logs.index',['q'=>$logs->model]) }}"> {{ $logs->model }}</a></td>
-							<td> <a href="{{ route('logs.index',['q'=>$logs->serial]) }}"> {{ $logs->serial }}</a></td>
+							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->compname]) }}">{{ $logs->compname }}</a></td>
+							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->ipaddress]) }}">{{ $logs->ipaddress }}</a></td>
+							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->os_version]) }}">{{ $logs->os_version }}</a></td>
+							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->os_build]) }}"> {{ $logs->os_build }}</a></td>
+							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->bios_version]) }}"> {{ $logs->bios_version }}</a></td>
+							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->bios_date]) }}"> {{ $logs->bios_date }}</a></td>
+							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->model]) }}"> {{ $logs->model }}</a></td>
+							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->serial]) }}"> {{ $logs->serial }}</a></td>
 						</tr>
 					@endforeach
 				</tbody>
