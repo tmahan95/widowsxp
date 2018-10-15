@@ -210,6 +210,18 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-    ],
+	],
 
+	'db_fields' => [
+		'date',
+		'uname',
+		'compname',
+		'ipaddress',
+		'os_version',
+		'os_build',
+		'bios_version',
+		'bios_date',
+		'model',
+		'serial',
+	]
 ];

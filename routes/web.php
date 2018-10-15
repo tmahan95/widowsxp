@@ -18,11 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
 Route::ANY('/logs/search', 'LogsController@searchLogs')->name("logSearch");
 
 Route::ANY('/logs/refined','LogsController@searchLogUsers')->name("refinedLogSearch");
 
-Auth::routes();
+Route::get('/import', 'ImportController@getImport')->name('import');
+Route::post('/import_parse', 'ImportController@parseImport')->name('import_parse');
+Route::post('/import_process', 'ImportController@processImport')->name('import_process');
 
 Route::get('/', 'HomeController@index')->name('home');
 
