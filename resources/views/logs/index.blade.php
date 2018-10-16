@@ -42,7 +42,7 @@
 				<tbody>
 					@foreach($details as $logs)
 						<tr>
-							<td> {{ $logs->date }}</td>
+							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->date]) }}">{{ $logs->date }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->uname]) }}">{{ $logs->uname }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->compname]) }}">{{ $logs->compname }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->ipaddress]) }}">{{ $logs->ipaddress }}</a></td>

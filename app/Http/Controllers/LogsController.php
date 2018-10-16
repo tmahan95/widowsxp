@@ -2,6 +2,7 @@
 
 namespace WidowsXP\Http\Controllers;
 
+#use Illuminate\Support\Facades\DB;
 use WidowsXP\Logs;
 use Illuminate\Http\Request;
 
