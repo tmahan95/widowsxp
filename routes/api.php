@@ -18,3 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('logs', 'LogsController@apiCreate');
+
+Route::POST('program','ProgramController@apiCreate');
+
+Route::POST('program/delete', 'ProgramController@apiDelete');

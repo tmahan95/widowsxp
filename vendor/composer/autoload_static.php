@@ -26,9 +26,9 @@ class ComposerStaticInit0e4be30987dcefe5f82a2d99f2bb6fd2
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
     );
 
@@ -149,8 +149,8 @@ class ComposerStaticInit0e4be30987dcefe5f82a2d99f2bb6fd2
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Zend\\Diactoros\\' => 
         array (
@@ -3938,6 +3938,7 @@ class ComposerStaticInit0e4be30987dcefe5f82a2d99f2bb6fd2
         'WidowsXP\\Asset' => __DIR__ . '/../..' . '/app/Asset.php',
         'WidowsXP\\Author' => __DIR__ . '/../..' . '/app/Author.php',
         'WidowsXP\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'WidowsXP\\CsvData' => __DIR__ . '/../..' . '/app/CsvData.php',
         'WidowsXP\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'WidowsXP\\Http\\Controllers\\ApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApiController.php',
         'WidowsXP\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -3947,6 +3948,7 @@ class ComposerStaticInit0e4be30987dcefe5f82a2d99f2bb6fd2
         'WidowsXP\\Http\\Controllers\\AuthorsController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthorsController.php',
         'WidowsXP\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'WidowsXP\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'WidowsXP\\Http\\Controllers\\ImportController' => __DIR__ . '/../..' . '/app/Http/Controllers/ImportController.php',
         'WidowsXP\\Http\\Controllers\\LogsController' => __DIR__ . '/../..' . '/app/Http/Controllers/LogsController.php',
         'WidowsXP\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',
         'WidowsXP\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -3955,8 +3957,10 @@ class ComposerStaticInit0e4be30987dcefe5f82a2d99f2bb6fd2
         'WidowsXP\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'WidowsXP\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'WidowsXP\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'WidowsXP\\Http\\Requests\\CsvImportRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CsvImportRequest.php',
         'WidowsXP\\Http\\Requests\\StoreAuthorRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreAuthorRequest.php',
         'WidowsXP\\Logs' => __DIR__ . '/../..' . '/app/Logs.php',
+        'WidowsXP\\Program' => __DIR__ . '/../..' . '/app/Program.php',
         'WidowsXP\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'WidowsXP\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'WidowsXP\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

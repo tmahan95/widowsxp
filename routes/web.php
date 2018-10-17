@@ -24,6 +24,10 @@ Route::ANY('/logs/search', 'LogsController@searchLogs')->name("logSearch");
 
 Route::ANY('/logs/refined','LogsController@searchLogUsers')->name("refinedLogSearch");
 
+Route::ANY('/progs/search','ProgramController@searchProgs')->name("progSearch");
+
+Route::ANY('/progs/refined','ProgramController@refinedProgSearch')->name("refinedProgSearch");
+
 Route::get('/import', 'ImportController@getImport')->name('import');
 Route::post('/import_parse', 'ImportController@parseImport')->name('import_parse');
 Route::post('/import_process', 'ImportController@processImport')->name('import_process');
@@ -37,11 +41,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 
 Route::group(['middleware' => 'auth'], function() {
 	Route::resource('logs', 'LogsController');
+	Route::resource('program','ProgramController');
 });
 
-Route::group(['middleware' => 'guest', 'prefix' => 'api'], function() {
-	Route::resource('api', 'ApiController');
-});
+#Route::group(['middleware' => 'guest', 'prefix' => 'api'], function() {
+#	Route::resource('api', 'ApiController');
+#});
+
+#Route::group(['middleware' => 'auth'], function() {
+#	Route::resource('program','ProgramController');
+#});
 
 #This is all for searching through Logs.
 

@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 { 
-	public function apiLogCreate(array $data) {
-	   /* $log = new Logs;
+	/*public function apiLogCreate(array $data) {
+	    $log = new Logs;
 
 	    $this->validate(request(), [
 		    'date' => 'required',
@@ -32,7 +32,7 @@ class ApiController extends Controller
 	    $log->bios_date = request('bios_date');
 	    $log->model = request('model');
 	    $log->serial = request('serial');
-	    */
+	    
 	    return Logs::create([
 	    'date' => $data['date'],
 	    'uname' => $data['uname'],
@@ -44,8 +44,18 @@ class ApiController extends Controller
 	    'bios_date' => $data['bios_date'],
 	    'model' => $data['model'],
 	    'serial' => $data['serial'],
-	    ]);
+    ]);
 	    #$log->save();
 	    #	    return redirect()->route('logs.index', $user->id)->with(['message' => 'Update of user complete']);
+	 
+	}*/
+
+	public function apiProgCreate(array $data) {
+		
+	    return Program::create([
+		    'compname' => $data['compname'],
+		    'progname' => $data['progname'],
+		    'version' => $data['version'],
+	    ]);
 	}
 }
