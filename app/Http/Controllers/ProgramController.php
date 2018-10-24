@@ -14,8 +14,8 @@ class ProgramController extends Controller
      */
     public function index()
     {
-	   $programs = Program::get();
-	   return view('programs.index', compact('programs'));
+	   #$programs = Program::get();
+	   return view('programs.index');
     }
 
     /**
@@ -103,7 +103,7 @@ class ProgramController extends Controller
 
     public function searchProgs(Request $request) {
 	$q = $request->q;
-	$programs = Program::select('compname','progname','version')->where('compname', 'LIKE', '%'.$q.'%')->orWhere('progname','LIKE','%'.$q.'%')->orWhere('version', 'LIKE','%'.$q.'%')->orderBy('compname')->get();
+	$programs = Program::select('compname','progname','version')->where('compname', 'LIKE', '%'.$q.'%')->orWhere('progname','LIKE','%'.$q.'%')->orWhere('version', 'LIKE','%'.$q.'%')->orderBy('progname')->get();
 
 	if( count($programs) > 0){
 		return view('programs.index', compact('programs'))->withQuery( $q );

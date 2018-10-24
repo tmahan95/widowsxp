@@ -20,7 +20,6 @@
 		</div>
 	</form>
 @if(isset($programs))
-<a href="{{ route('program.create') }}" class="btn btn-default">Add New Program</a>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
