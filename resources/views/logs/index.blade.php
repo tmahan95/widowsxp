@@ -53,7 +53,7 @@
 							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->bios_date]) }}"> {{ $logs->bios_date }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->model]) }}"> {{ $logs->model }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->serial]) }}"> {{ $logs->serial }}</a></td>
-							<td> <a href="{{ route('refinedProgSearch', ['q'=>$logs->compname]) }}">See Programs</a></td>
+							<td> <a href="{{ route('refinedProgSearch', ['q'=>$logs->compname]) }}">See Programs </a></td>
 						</tr>
 					@endforeach
 				</tbody>
