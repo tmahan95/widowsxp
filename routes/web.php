@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::middleware(['auth'])->group( function() {
 Route::ANY('/logs/search', 'LogsController@searchLogs')->name("logSearch");
 
 Route::ANY('/logs/refined','LogsController@searchLogUsers')->name("refinedLogSearch");
@@ -42,6 +43,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 Route::group(['middleware' => 'auth'], function() {
 	Route::resource('logs', 'LogsController');
 	Route::resource('program','ProgramController');
+});
+
+
 });
 
 #Route::group(['middleware' => 'guest', 'prefix' => 'api'], function() {
