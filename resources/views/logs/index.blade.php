@@ -44,7 +44,7 @@
 						<tr>
 							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->date]) }}">{{ $logs->date }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->uname]) }}">{{ $logs->uname }}</a></td>
-							<td> <a href="{{ route('refinedProgSearch', ['q'=>$logs->compname]) }}">{{ $logs->compname }}</a></td>
+							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->compname]) }}">{{ $logs->compname }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch', ['q'=>$logs->ipaddress]) }}">{{ $logs->ipaddress }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->os_version]) }}">{{ $logs->os_version }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->os_build]) }}"> {{ $logs->os_build }}</a></td>
