@@ -16,7 +16,7 @@ use WidowsXP\Logs;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
@@ -35,7 +35,7 @@ Route::post('/import_process', 'ImportController@processImport')->name('import_p
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
+Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
 	Route::resource('authors', 'AuthorsController');
 	Route::resource('users', 'UsersController');
 });

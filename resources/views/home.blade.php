@@ -14,7 +14,8 @@
                         </div>
                     @endif
 			<ul>
-				<li><a href="/admin/users">Users</a></li>
+				{{ Auth::user()->is_admin }}
+				<li><a href="{{ route('users.index') }}">Users</a></li>
 				<li><a href="/logs">Logs</a></li>
 				<li><a href="{{ route('import') }}">Import</a></li>
 			</ul>
