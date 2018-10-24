@@ -19,6 +19,7 @@
 
 		</div>
 	</form>
+	<br/>
 @if(isset($programs))
 	<div class="container">
 		<div class="row">
