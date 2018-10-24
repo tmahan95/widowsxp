@@ -16,7 +16,6 @@
 			<ul>
 				<li><a href="/admin/users">Users</a></li>
 				<li><a href="/logs">Logs</a></li>
-				<li><a href="{{ route('program.index') }}">Programs</a></li>
 				<li><a href="{{ route('import') }}">Import</a></li>
 			</ul>
                 </div>

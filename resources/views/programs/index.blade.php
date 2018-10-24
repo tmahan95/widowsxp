@@ -9,7 +9,7 @@
 	{{ $message }}
 @endif
 
-	<form action="{{ route('progSearch') }}" method="POST" role="search">
+	<form action="{{ route('logSearch') }}" method="POST" role="search">
 		<div class="container">
 			{{ csrf_field() }}
 			<div class="input-group">
