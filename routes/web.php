@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Input;
 use WidowsXP\Logs;
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+#Route::get('/', function () {
+#    return view('welcome');
+#})->name('welcome');
+
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
@@ -32,8 +34,6 @@ Route::ANY('/progs/refined','ProgramController@refinedProgSearch')->name("refine
 Route::get('/import', 'ImportController@getImport')->name('import');
 Route::post('/import_parse', 'ImportController@parseImport')->name('import_parse');
 Route::post('/import_process', 'ImportController@processImport')->name('import_process');
-
-Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
 	Route::resource('authors', 'AuthorsController');

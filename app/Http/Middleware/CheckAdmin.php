@@ -20,6 +20,6 @@ class CheckAdmin
 	    if(Auth::user() && Auth::user()->is_admin == 1) {
 		return $next($request);
 	    }
-	    return redirect('/');
+	    return redirect('/')->with(['message' => 'You are not athorized to access that link. Please contact the site administrator.']);
     }
 }
