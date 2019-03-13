@@ -1,0 +1,14 @@
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\bin\Debug\WidowsXP.exe.config
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\bin\Debug\WidowsXP.exe
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\bin\Debug\WidowsXP.pdb
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\obj\Debug\WidowsXP.MyNewService.resources
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\obj\Debug\WidowsXP.ProjectInstaller.resources
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\obj\Debug\WidowsXP.csproj.GenerateResource.cache
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\obj\Debug\WidowsXP.csproj.CoreCompileInputs.cache
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\obj\Debug\WidowsXP.exe
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\obj\Debug\WidowsXP.pdb
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\bin\Debug\WidowsXP.exe.manifest
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\bin\Debug\WidowsXP.application
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\obj\Debug\WidowsXP.exe.manifest
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\obj\Debug\WidowsXP.application
+C:\Users\tim.mahan\source\repos\WidowsXP\WidowsXP\obj\Debug\WidowsXP.csprojAssemblyReference.cache
