@@ -36,7 +36,7 @@
 						<th>BIOS Version</th>
 						<th>BIOS Date</th>
 						<th>Model</th>
-						<th>Serial</th>
+						<th>Serials</th>
 						<th>Programs</th>
 					<tr>
 				</thead>
@@ -52,7 +52,7 @@
 							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->bios_version]) }}"> {{ $logs->bios_version }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->bios_date]) }}"> {{ $logs->bios_date }}</a></td>
 							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->model]) }}"> {{ $logs->model }}</a></td>
-							<td> <a href="{{ route('refinedLogSearch',['q'=>$logs->serial]) }}"> {{ $logs->serial }}</a></td>
+							<td> <a href="{{ route('monSearch',['q'=>$logs->compname]) }}"> {{ $logs->serial }}</a></td>
 							<td> <a href="{{ route('refinedProgSearch', ['q'=>$logs->compname]) }}">See Programs</a></td>
 						</tr>
 					@endforeach

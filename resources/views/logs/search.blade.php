@@ -29,7 +29,7 @@
 						<th>BIOS Version</th>
 						<th>BIOS Date</th>
 						<th>Model</th>
-						<th>Serial</th>
+						<th>Serials</th>
 					<tr>
 				</thead>
 				<tbody>

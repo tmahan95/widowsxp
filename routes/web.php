@@ -29,6 +29,8 @@ Route::ANY('/progs/search','ProgramController@searchProgs')->name("progSearch");
 
 Route::ANY('/progs/refined','ProgramController@refinedProgSearch')->name("refinedProgSearch");
 
+Route::ANY('/monitors/search', 'MonitorsController@searchMonitors')->name("monSearch");
+
 Route::get('/import', 'ImportController@getImport')->name('import');
 Route::post('/import_parse', 'ImportController@parseImport')->name('import_parse');
 Route::post('/import_process', 'ImportController@processImport')->name('import_process');
@@ -43,6 +45,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 Route::group(['middleware' => 'auth'], function() {
 	Route::resource('logs', 'LogsController');
 	Route::resource('program','ProgramController');
+	Route::resource('monitors', 'MonitorsController');
 });
 
 
