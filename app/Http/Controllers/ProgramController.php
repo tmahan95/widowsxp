@@ -117,6 +117,8 @@ class ProgramController extends Controller
 	$q = $request->q;
 	$programs = Program::select('compname','progname','version')->where('compname','like','%'.$q.'%')->orWhere('progname','like','%'.$q.'%')->orWhere('version','like','%'.$q.'%')->orderBy('compname')->get();
 
+	$balls = "omfg";
+
 	if( count($programs) > 0){
 		return view('programs.index', compact('programs'))->withQuery( $q );
 	}

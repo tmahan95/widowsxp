@@ -16,6 +16,7 @@
 				<input type="text" class="form-control" name="q" placeholder="Search logs"> <span class="input-group-btn">
 				<button type="submit" class="btn btn-primary" text="Submit">Search</button>
 			</div>
+			<a href="{{ route( 'logs.index' ) }}" class="btn btn-secondary" Text="Back to Logs">Back to Logs</a>
 
 		</div>
 	</form>
