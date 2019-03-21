@@ -91,6 +91,9 @@ class ProgramController extends Controller
     public function apiDelete(Request $data) {
 	    return Program::select('*')->where('compname', '=', $data['compname'])->delete();
     }
+    public function apiDelete2(Request $data){
+	   return Program::select('*')->where('compname','=',$data['compname'])->where('progname','=',$data['progname'])->delete();
+    }
 
     public function apiCreate(Request $data) {
 	    
