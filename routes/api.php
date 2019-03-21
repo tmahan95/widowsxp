@@ -21,6 +21,8 @@ Route::post('logs', 'LogsController@apiCreate');
 
 Route::POST('program','ProgramController@apiCreate');
 
+Route::POST('program2', 'ProgramController@apiCreate2');
+
 Route::POST('program/delete', 'ProgramController@apiDelete');
 
 Route::POST('monitors', 'MonitorsController@apiCreate');

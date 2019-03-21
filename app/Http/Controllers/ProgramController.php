@@ -100,6 +100,20 @@ class ProgramController extends Controller
 		    'version' => $data['version'],
 	    ]);
     }
+    public function apiCreate2(Request $data) {
+	   $compname = $data['compname'];
+	   $progname = $data['progname'];
+	   $version = $data ['version'];
+	   if (Program::where('compname', '=', $compname)->where('progname', '=', $progname)->exists()){
+	   }
+	   else {
+		return Program::create([
+		    'compname'=> $data['compname'],
+                    'progname' => $data['progname'],
+		    'version' => $data['version'],
+		]);
+	   }
+ }
 
     public function searchProgs(Request $request) {
 	$q = $request->q;
