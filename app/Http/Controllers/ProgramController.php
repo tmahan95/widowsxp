@@ -118,26 +118,24 @@ class ProgramController extends Controller
 	   }
  }
 
-    public function searchProgs(Request $request) {
+/*    public function searchProgs(Request $request) {
 	$q = $request->q;
 	$programs = Program::select('compname','progname','version')->where('compname', 'LIKE', '%'.$q.'%')->orWhere('progname','LIKE','%'.$q.'%')->orWhere('version', 'LIKE','%'.$q.'%')->orderBy('progname')->get();
 
 	if( count($programs) > 0){
-		return view('programs.index', compact('programs'))->withQuery( $q );
+		return view('programs.index', compact('programs'))->with( 'q', $q );
 	}
 	else{
 		return view('programs.index')->withMessage('No Details Found. Try to search again!');
 	}
-    }
+    }*/
 
     public function refinedProgSearch(Request $request){
 	$q = $request->q;
 	$programs = Program::select('compname','progname','version')->where('compname','like','%'.$q.'%')->orWhere('progname','like','%'.$q.'%')->orWhere('version','like','%'.$q.'%')->orderBy('compname')->get();
 
-	$balls = "omfg";
-
 	if( count($programs) > 0){
-		return view('programs.index', compact('programs'))->withQuery( $q );
+		return view('programs.index', compact('programs'))->with( 'q', $q );
 	}
 	else{
 		return view('programs.index')->withMessage('No Details Found. Try another serach or contact the site administrator');

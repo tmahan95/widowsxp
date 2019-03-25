@@ -16,7 +16,7 @@
 				<input type="text" class="form-control" name="q" placeholder="Search logs"> <span class="input-group-btn">
 				<button type="submit" class="btn btn-primary" text="Submit">Search</button>
 			</div>
-			<a href="{{ route( 'logs.index' ) }}" class="btn btn-secondary" Text="Back to Logs">Back to Logs</a>
+			<a href="{{ route('refinedLogSearch', ['q'=>session('query')] ) }}" class="btn btn-secondary" Text="Back to Logs">Back to Logs</a>
 
 		</div>
 	</form>
@@ -39,9 +39,9 @@
 						<tbody>
 							@forelse($programs as $program)
 							<tr>
-								<td><a href="{{ route('refinedProgSearch', ['q'=>$program->compname]) }}">{{ $program->compname }}</a></td>
-								<td><a href="{{ route('refinedProgSearch', ['q'=>$program->progname]) }}">{{ $program->progname }}</a>
-								<td><a href="{{ route('refinedProgSearch', ['q'=>$program->version]) }}">{{ $program->version}}</a></td>
+								<td><a href="{{ route('progSearch', ['q'=>$program->compname]) }}">{{ $program->compname }}</a></td>
+								<td><a href="{{ route('progSearch', ['q'=>$program->progname]) }}">{{ $program->progname }}</a>
+								<td><a href="{{ route('progSearch', ['q'=>$program->version]) }}">{{ $program->version}}</a></td>
 							</tr>
 							@empty
 							<tr>
