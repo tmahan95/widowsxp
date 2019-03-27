@@ -18,7 +18,8 @@
 				<button type="submit" class="btn btn-primary" text="Submit">Search</button>
 			</div>
 			@if(isset($details))
-			<a href="{{ route('downloadLogs', ['logs'=>$details]) }}" class="btn btn-secondary" Text="Download">Download</a>
+			<a href="{{ route('downloadLogs', ['q'=>session('query')]) }}" class="btn btn-secondary" Text="Download">Download</a>
+				{{ $details }}
 			@endif
 		</div>
 	</form>

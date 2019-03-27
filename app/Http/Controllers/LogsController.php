@@ -158,19 +158,21 @@ class LogsController extends Controller
 			"Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
 			"Expires" => "0"
 			);
-	$logs = Logs::all()->toArray();
-//	$logs = $request->logs;
-	array_unshift($logs, array_keys($logs[0]));
+//	$logs = Logs::all()->toArray();
+	$q = $request->q;
 
-	$callback = function() use ($logs){
+	$log = Logs::select('date','uname','compname','ipaddress','os_version','os_build','bios_version','bios_date','model','serial')->where('date', 'LIKE', '%'.$q.'%')->orWhere('uname','LIKE','%'.$q.'%')->orWhere('compname', 'LIKE','%'.$q.'%')->orWhere('ipaddress', 'LIKE','%'.$q.'%')->orWhere('os_version', 'LIKE','%'.$q.'%')->orWhere('os_build', 'LIKE','%'.$q.'%')->orWhere('bios_version', 'LIKE','%'.$q.'%')->orWhere('bios_date', 'LIKE','%'.$q.'%')->orWhere('model', 'LIKE','%'.$q.'%')->orWhere('serial', 'LIKE','%'.$q.'%')->distinct()->orderBy('date','desc')->get()->toArray();
+
+	$callback = function() use ($log){
 		$FH = fopen('php://output', 'w');
 
-		foreach ($logs as $fields){
+		foreach ($log as $fields){
 			$fields = (array) $fields;
 			fputcsv($FH, ($fields));
 	    	}
 		fclose($FH);
 	};
+
 	return response()->stream($callback, 200, $headers);
     }
 }
