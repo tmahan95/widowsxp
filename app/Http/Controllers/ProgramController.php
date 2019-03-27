@@ -144,7 +144,7 @@ class ProgramController extends Controller
     public function download(Request $request) {
         $headers = array(
                         "Content-type" => "text/csv",
-                        "Content-Disposition" => "attachment; filename=logs.csv",
+                        "Content-Disposition" => "attachment; filename=programs.csv",
                         "Pragma" => "no-cache",
                         "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
                         "Expires" => "0"
