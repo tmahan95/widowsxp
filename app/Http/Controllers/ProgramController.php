@@ -132,7 +132,7 @@ class ProgramController extends Controller
 
     public function refinedProgSearch(Request $request){
 	$q = $request->q;
-	$programs = Program::select('compname','progname','version')->where('compname','like','%'.$q.'%')->orWhere('progname','like','%'.$q.'%')->orWhere('version','like','%'.$q.'%')->orderBy('compname')->get();
+	$programs = Program::select('compname','progname','version')->where('compname','like','%'.$q.'%')->orWhere('progname','like','%'.$q.'%')->orWhere('version','like','%'.$q.'%')->orderBy('progname')->get();
 
 	if( count($programs) > 0){
 		return view('programs.index', compact('programs'))->with( 'q', $q );
@@ -140,5 +140,30 @@ class ProgramController extends Controller
 	else{
 		return view('programs.index')->withMessage('No Details Found. Try another serach or contact the site administrator');
 	}
+    }
+    public function download(Request $request) {
+        $headers = array(
+                        "Content-type" => "text/csv",
+                        "Content-Disposition" => "attachment; filename=logs.csv",
+                        "Pragma" => "no-cache",
+                        "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+                        "Expires" => "0"
+                        );
+//      $logs = Logs::all()->toArray();
+        $q = $request->q;
+
+	$programs = Program::select('compname','progname','version')->where('compname','like','%'.$q.'%')->orWhere('progname','like','%'.$q.'%')->orWhere('version','like','%'.$q.'%')->orderBy('progname')->get()->toArray();
+
+        $callback = function() use ($programs){
+                $FH = fopen('php://output', 'w');
+
+                foreach ($programs as $fields){
+                        $fields = (array) $fields;
+                        fputcsv($FH, ($fields));
+                }
+                fclose($FH);
+        };
+
+        return response()->stream($callback, 200, $headers);
     }
 }
