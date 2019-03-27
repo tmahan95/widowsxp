@@ -19,7 +19,6 @@
 			</div>
 			@if(isset($details))
 			<a href="{{ route('downloadLogs', ['q'=>session('query')]) }}" class="btn btn-secondary" Text="Download">Download</a>
-				{{ $details }}
 			@endif
 		</div>
 	</form>
