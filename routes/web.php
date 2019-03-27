@@ -33,7 +33,7 @@ Route::ANY('/monitors/search', 'MonitorsController@searchMonitors')->name("monSe
 
 Route::ANY('/logs/download', 'LogsController@download')->name("downloadLogs");
 
-Route::ANY('/logs/download', 'ProgramController@download')->name("downloadPrograms");
+Route::ANY('/progs/download', 'ProgramController@download')->name("downloadPrograms");
 
 Route::get('/import', 'ImportController@getImport')->name('import');
 Route::post('/import_parse', 'ImportController@parseImport')->name('import_parse');
