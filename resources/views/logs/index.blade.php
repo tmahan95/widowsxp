@@ -59,7 +59,6 @@
 						</tr>
 					@endforeach
 				</tbody>
-				{{ $details->links() }}
 			</table>
 		@endif
 	</div>
