@@ -5,6 +5,7 @@ namespace WidowsXP\Http\Controllers;
 #use Illuminate\Support\Facades\DB;
 use WidowsXP\Logs;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class LogsController extends Controller
 {
@@ -113,14 +114,14 @@ class LogsController extends Controller
 	    $log->serial = request('serial');
 	    */
 	    return Logs::create([
-	    'date' => $data['date'],
+	    'date' => date('Y-m-d', strtotime($data['date'])),
 	    'uname' => $data['uname'],
 	    'compname' => $data['compname'],
 	    'ipaddress' => $data['ipaddress'],
 	    'os_version' => $data['os_version'],
 	    'os_build' => $data['os_build'],
 	    'bios_version' => $data['bios_version'],
-	    'bios_date' => $data['bios_date'],
+	    'bios_date' => date('Y-m-d', strtotime($data['bios_date'])),
 	    'model' => $data['model'],
 	    'serial' => $data['serial'],
 	    ]);
@@ -147,5 +148,29 @@ class LogsController extends Controller
 		return view('logs.index')->withDetails ($log)->withQuery( $q );
 	else
 		return view('logs.index')->withMessage('No Details Found. Try another serach or contact the site administrator');
+    }
+
+    public function download(Request $request) {
+	$headers = array(
+			"Content-type" => "text/csv",
+			"Content-Disposition" => "attachment; filename=logs.csv",
+			"Pragma" => "no-cache",
+			"Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+			"Expires" => "0"
+			);
+	$logs = Logs::all()->toArray();
+//	$logs = $request->logs;
+	array_unshift($logs, array_keys($logs[0]));
+
+	$callback = function() use ($logs){
+		$FH = fopen('php://output', 'w');
+
+		foreach ($logs as $fields){
+			$fields = (array) $fields;
+			fputcsv($FH, ($fields));
+	    	}
+		fclose($FH);
+	};
+	return response()->stream($callback, 200, $headers);
     }
 }

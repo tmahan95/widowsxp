@@ -17,6 +17,7 @@
 				<button type="submit" class="btn btn-primary" text="Submit">Search</button>
 			</div>
 			<a href="{{ route('refinedLogSearch', ['q'=>session('query')] ) }}" class="btn btn-secondary" Text="Back to Logs">Back to Logs</a>
+			<a href="{{ route('downloadLogs') }}" class="btn btn-secondary" Text="Download">Download</a>
 
 		</div>
 	</form>

@@ -17,7 +17,10 @@
 				<input type="text" class="form-control" name="q" placeholder="Search logs"> <span class="input-group-btn">
 				<button type="submit" class="btn btn-primary" text="Submit">Search</button>
 			</div>
-
+			@if(isset($details))
+			<a href="{{ route('downloadLogs', ['logs'=>$details]) }}" class="btn btn-secondary" Text="Download">Download</a>
+				{{ $details }}
+			@endif
 		</div>
 	</form>
 	<div class="container">

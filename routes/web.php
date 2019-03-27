@@ -31,6 +31,8 @@ Route::ANY('/progs/refined','ProgramController@refinedProgSearch')->name("refine
 
 Route::ANY('/monitors/search', 'MonitorsController@searchMonitors')->name("monSearch");
 
+Route::ANY('/logs/download', 'LogsController@download')->name("downloadLogs");
+
 Route::get('/import', 'ImportController@getImport')->name('import');
 Route::post('/import_parse', 'ImportController@parseImport')->name('import_parse');
 Route::post('/import_process', 'ImportController@processImport')->name('import_process');
